@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Plumbline | House extension architects (HTML template demo)</title>
+<meta name="description" content="A one-page architecture firm website template with a self-drawing floor plan.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Familjen+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{--cobalt:#1a3cb5;--deep:#122a85;--line:#e4ebff;--tape:#ffd84d;--white:#fff}
+*{box-sizing:border-box;margin:0}
+body{background:var(--cobalt);color:var(--line);font:400 1.125rem/1.55 "Familjen Grotesk",sans-serif}
+a{color:inherit;text-underline-offset:4px}
+:focus-visible{outline:3px solid var(--tape);outline-offset:3px}
+.wrap{width:min(1240px,100% - 40px);margin-inline:auto}
+nav{display:flex;justify-content:space-between;padding:22px 0;font-weight:700}
+.hero{position:relative;background-image:linear-gradient(rgba(228,235,255,.09) 1px,transparent 1px),linear-gradient(90deg,rgba(228,235,255,.09) 1px,transparent 1px);background-size:40px 40px}
+.sheet{display:grid;grid-template-columns:5fr 7fr;gap:40px;align-items:end;padding:40px 0 72px}
+h1{font-size:clamp(2.9rem,6.4vw,5.6rem);line-height:1;letter-spacing:-.025em;font-weight:700;color:var(--white)}
+.sheet p{margin-top:24px;max-width:36ch;font-size:1.3rem;line-height:1.4}
+#plan{width:100%;height:auto;display:block}
+#plan .w{fill:none;stroke:var(--line);stroke-width:7;stroke-linecap:square;stroke-dasharray:1;stroke-dashoffset:1;animation:draw 1.5s ease-in-out forwards}
+#plan .new{stroke:var(--tape);animation-delay:1.2s}
+#plan .t{fill:var(--line);font:500 19px "Familjen Grotesk",sans-serif;opacity:0;animation:show .5s 1.6s forwards}
+#plan .d{stroke:var(--tape);stroke-width:2;opacity:0;animation:show .5s 2.4s forwards}
+#plan .dt,#plan .nt{fill:var(--tape);font:700 21px "Familjen Grotesk",sans-serif;opacity:0;animation:show .5s 2.4s forwards}
+@keyframes draw{to{stroke-dashoffset:0}}
+@keyframes show{to{opacity:1}}
+section{padding:80px 0}
+h2{font-size:clamp(2.1rem,4vw,3.2rem);line-height:1.05;letter-spacing:-.02em;color:var(--white);margin-bottom:32px}
+.work{background:var(--deep)}
+.scroll{overflow-x:auto}
+table{width:100%;min-width:560px;border-collapse:collapse}
+th,td{padding:16px 16px 16px 0;text-align:left;border-bottom:1px solid rgba(228,235,255,.3);vertical-align:baseline}
+th{font-weight:500;font-size:1rem}
+td:first-child{font-size:1.4rem;font-weight:500;color:var(--white)}
+.num{text-align:right;padding-right:0;font-variant-numeric:tabular-nums}
+td.num{color:var(--tape);font-weight:700}
+ol{list-style:none;padding:0;display:grid;grid-template-columns:repeat(4,1fr);gap:32px;counter-reset:s}
+li{counter-increment:s;border-top:7px solid var(--line);padding-top:14px}
+li::before{content:"Stage " counter(s);display:block;color:var(--tape);font-weight:700}
+h3{font-size:1.5rem;color:var(--white);margin:4px 0 8px}
+.call{background:var(--tape);color:var(--deep)}
+.call .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:24px}
+.call h2{color:var(--deep);margin:0;max-width:18ch}
+.btn{display:inline-block;padding:16px 26px;background:var(--deep);color:var(--white);font-weight:700;text-decoration:none}
+.btn:hover{background:var(--cobalt)}
+.call :focus-visible{outline-color:var(--deep)}
+footer{padding:24px 0;font-size:1rem}
+footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px 28px}
+@media (max-width:860px){.sheet{grid-template-columns:1fr}ol{grid-template-columns:1fr 1fr}section{padding:56px 0}}
+@media (max-width:480px){ol{grid-template-columns:1fr}}
+@media (prefers-reduced-motion:reduce){#plan *{animation:none!important;opacity:1!important;stroke-dashoffset:0!important}}
+</style>
+</head>
+<body>
+<div class="hero">
+<header class="wrap">
+  <nav><span>Plumbline</span><a href="#talk">Talk to an architect</a></nav>
+  <div class="sheet">
+    <div>
+      <h1>We add rooms to houses people already love.</h1>
+      <p>Rear extensions, loft rooms and side returns, drawn and built by one small team in Bristol.</p>
+    </div>
+    <svg id="plan" viewBox="0 0 760 520" role="img" aria-label="Floor plan of a terraced house with a new kitchen extension added at the rear, adding 24 square metres.">
+      <path class="w" pathLength="1" d="M40 60H440V440H40Z"/>
+      <path class="w" pathLength="1" d="M40 220H180M240 220H440"/>
+      <path class="w" pathLength="1" d="M250 60V160M250 220V320"/>
+      <path class="w new" pathLength="1" d="M440 60H700V400H560M480 400H440"/>
+      <text class="t" x="96" y="150">Front room</text>
+      <text class="t" x="306" y="150">Study</text>
+      <text class="t" x="96" y="340">Dining</text>
+      <text class="t" x="310" y="390">Utility</text>
+      <text class="nt" x="510" y="220">New kitchen</text>
+      <path class="d" d="M440 472H700M440 460V484M700 460V484"/>
+      <text class="dt" x="530" y="506">6.0 m</text>
+    </svg>
+  </div>
+</header>
+</div>
+
+<section class="work">
+  <div class="wrap">
+    <h2>Recent houses</h2>
+    <div class="scroll"><table>
+      <thead><tr><th>House</th><th>Work</th><th class="num">Space added</th><th class="num">Build time</th></tr></thead>
+      <tbody>
+        <tr><td>Cotham Brow</td><td>Rear kitchen extension</td><td class="num">24 m²</td><td class="num">14 weeks</td></tr>
+        <tr><td>Ashley Down</td><td>Loft bedroom and bath</td><td class="num">31 m²</td><td class="num">11 weeks</td></tr>
+        <tr><td>Totterdown Steps</td><td>Side return, new stair</td><td class="num">12 m²</td><td class="num">9 weeks</td></tr>
+        <tr><td>Redland Mews</td><td>Two-storey rear wing</td><td class="num">46 m²</td><td class="num">22 weeks</td></tr>
+      </tbody>
+    </table></div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2>How a project runs</h2>
+    <ol>
+      <li><h3>Survey</h3><p>We measure the house and write down what is not working.</p></li>
+      <li><h3>Drawings</h3><p>You get three layouts with a cost range for each.</p></li>
+      <li><h3>Planning</h3><p>We file the application and answer the council.</p></li>
+      <li><h3>Build</h3><p>Our site lead is there every working day until handover.</p></li>
+    </ol>
+  </div>
+</section>
+
+<section class="call" id="talk">
+  <div class="wrap">
+    <h2>Send us a photo of the back of your house.</h2>
+    <a class="btn" href="mailto:studio@example.com">Email the studio</a>
+  </div>
+</section>
+
+<footer><div class="wrap"><span>Plumbline is a fictional practice.</span><a href="https://sofitechllc.com/">Template demo by Sofitech LLC</a></div></footer>
+</body>
+</html>
